@@ -34,7 +34,9 @@ def load_cookies():
     browser.add_cookie({'name': 'SPC_EC', 'value': cookiee})
     browser.get_cookies()
     time.sleep(1)
-    print('\033[32m[+] Driver initialization suksess,...')
+    r = requests.get("https://shopee.co.id")
+    if (r.status_code == 200):
+      print('\033[32m[+] Driver initialization suksess,...')
 def purchase_button():
   try:
     print('\033[32m[+] This is for purchasing an item!')
@@ -67,7 +69,7 @@ def main():
   r = requests.get(link_produk)
   if (r.status_code == 200):
     print('\033[32m[+] Success get the Product')
-  current_minute = int(input("\033[32m[+] Input the minutes number (1-60) : "))
+  current_minute = int(input("\033[32m[+] Input the minutes number (1-59) : "))
 
   while minute != current_minute:
     minute = int(time.strftime("%M", time.localtime()))

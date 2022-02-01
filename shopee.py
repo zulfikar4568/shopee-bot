@@ -56,8 +56,8 @@ def purchase_button():
   try:
     print('\033[32m[+] GOWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW!')
     # Pilih Varian
-    varians = WebDriverWait(browser, 1200).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="main"]/div/div[2]/div[1]/div/div[2]/div/div[1]/div[3]/div/div[4]/div/div[2]/div/div[1]/div/button[1]')))
-    browser.execute_script("arguments[0].click();", varians)
+    # varians = WebDriverWait(browser, 1200).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Merah')]")))
+    # browser.execute_script("arguments[0].click();", varians)
 
     # Klik Tombol Beli
     beli = WebDriverWait(browser, 1200).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="main"]/div/div[2]/div[1]/div/div[2]/div/div[1]/div[3]/div/div[5]/div/div/button[2]')))
@@ -82,7 +82,7 @@ def purchase_button():
     #Masukan Pin Shopee Pay
     pin_shopee = WebDriverWait(browser, 1200).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="pin-popup"]/div[1]/div[3]/div[1]')))
     browser.execute_script("arguments[0].click();", pin_shopee)
-    pin_shopee.send_keys(pin_number)
+    # pin_shopee.send_keys(pin_number)
     print("\033[32m[+] INFO: Uhuiy,..Dapet!\033[31m", time.strftime("%H:%M:%S", time.localtime()), "\033[93mDetik")
   except NoSuchElementException as e:
     print(e)
